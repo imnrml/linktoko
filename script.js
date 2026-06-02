@@ -130,7 +130,7 @@ function setCheckout(plan, price) {
 function updateWaLink() {
   const name = document.getElementById('buyerName').value || 'Calon pembeli';
   const phone = document.getElementById('buyerPhone').value || '-';
-  const text = `Halo LinkToko, saya ${name}. Saya mau beli ${checkoutPlan.value}. Nomor WA: ${phone}. Mohon info pembayaran via SeaBank atau PayPal.`;
+  const text = `Halo LinkToko, saya ${name}. Saya mau beli ${checkoutPlan.value}. Nomor WA: ${phone}. Mohon info pembayaran via SeaBank, PayPal, atau DANA.`;
   waOrder.href = `https://wa.me/6287838815588?text=${encodeURIComponent(text)}`;
 }
 
@@ -158,9 +158,12 @@ document.addEventListener('click', (event) => {
   if (target) setCheckout(target.dataset.plan, target.dataset.price);
 });
 
-document.getElementById('simulatePay').addEventListener('click', () => {
-  showToast('Checkout demo sukses. Sambungkan API payment untuk live.');
-});
+const simulatePay = document.getElementById('simulatePay');
+if (simulatePay) {
+  simulatePay.addEventListener('click', () => {
+    showToast('Checkout demo sukses. Sambungkan API payment untuk live.');
+  });
+}
 
 function showToast(message) {
   toast.textContent = message;

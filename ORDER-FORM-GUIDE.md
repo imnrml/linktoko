@@ -1,3 +1,9 @@
+# Google Form Order LinkToko
+
+Form order aktif: https://forms.gle/VqqfZQ54HhXaM4mo6
+
+Gunakan link ini untuk tombol order di landing page. Pembayaran bisa dikonfirmasi manual lewat WhatsApp setelah buyer memilih SeaBank, PayPal, atau DANA.
+
 # Panduan Google Form Order LinkToko
 
 Gunakan Google Form gratis supaya order tidak berantakan di WhatsApp.

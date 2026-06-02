@@ -82,3 +82,10 @@ Upload semua file dan folder ke GitHub, lalu tombol “Lihat demo” di section 
 ## Google Form order
 
 Lihat file `ORDER-FORM-GUIDE.md` untuk daftar field Google Form order. Setelah form jadi, link Google Form bisa ditaruh di website atau tombol WhatsApp.
+
+
+## Link Google Form order
+
+Form order aktif: https://forms.gle/VqqfZQ54HhXaM4mo6
+
+Metode pembayaran manual: SeaBank, PayPal, dan DANA. Untuk keamanan, detail tujuan pembayaran sebaiknya diberikan setelah buyer mengisi form atau chat WhatsApp admin.

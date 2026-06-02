@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LinkToko - Platform Link Toko Online Siap Edit</title>
+  <meta name="description" content="Jual dan buat link toko online siap pakai. Pilih template, edit brand, terima pesanan via WhatsApp, dan aktifkan pembayaran online." />
+  <meta name="keywords" content="link toko online, template toko online, website UMKM, toko online murah, link jualan" />
+  <meta property="og:title" content="LinkToko - Link toko online siap jualan" />
+  <meta property="og:description" content="Platform template toko online siap edit untuk UMKM dan kreator." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#7057ff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LinkToko",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "49000",
+      "priceCurrency": "IDR"
+    },
+    "description": "Platform link toko online siap edit untuk UMKM, kreator, dan reseller."
+  }
+  </script>
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header" id="top">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="LinkToko Home">
+        <span class="brand-mark">LT</span>
+        <span>LinkToko</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#templates">Template</a>
+        <a href="#generator">Buat Link</a>
+        <a href="#pricing">Paket</a>
+        <a href="#monetize">Monetisasi</a>
+      </div>
+      <a class="btn btn-small btn-ghost" href="#checkout">Mulai Jualan</a>
+      <button class="menu" id="menuBtn" aria-label="Buka menu">Menu</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <div class="pill">Platform link toko online siap jualan</div>
+        <h1>Jual template website toko. Pembeli tinggal edit, publish, lalu jualan.</h1>
+        <p>
+          LinkToko adalah prototype marketplace untuk jual link toko online. Cocok buat UMKM, reseller, jasa, kuliner, fashion, dan produk digital.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#generator">Coba buat link toko</a>
+          <a class="btn btn-secondary" href="#templates">Lihat template</a>
+        </div>
+        <div class="metrics">
+          <div><strong>4</strong><span>template awal</span></div>
+          <div><strong>3</strong><span>paket jualan</span></div>
+          <div><strong>0%</strong><span>coding untuk pembeli</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal delay-1" aria-label="Preview aplikasi LinkToko">
+        <div class="browser-card">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="store-preview">
+            <div class="store-banner">
+              <span class="mini-logo">BT</span>
+              <div>
+                <h3 id="heroStoreName">Bakso Turbo</h3>
+                <p id="heroStoreTagline">Makan enak, order cepat.</p>
+              </div>
+            </div>
+            <div class="product-grid-mini">
+              <div><b>Bakso Urat</b><span>Rp 18.000</span></div>
+              <div><b>Mie Ayam</b><span>Rp 15.000</span></div>
+              <div><b>Es Teh Jumbo</b><span>Rp 6.000</span></div>
+              <div><b>Paket Hemat</b><span>Rp 25.000</span></div>
+            </div>
+            <button class="fake-pay">Checkout QRIS / VA / E-Wallet</button>
+          </div>
+        </div>
+        <div class="floating-card revenue-card">
+          <span>Omzet template</span>
+          <strong>Rp 4,8 jt</strong>
+          <small>simulasi 48 order x paket Pro</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="templates">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Marketplace</span>
+        <h2>Template siap jual yang bisa diedit pembeli</h2>
+        <p>Pembeli tinggal pilih niche, ubah nama toko, warna, produk, WhatsApp, dan link pembayaran.</p>
+      </div>
+      <div class="template-grid" id="templateGrid"></div>
+    </section>
+
+    <section class="section builder-section" id="generator">
+      <div class="container builder-layout">
+        <div class="builder-copy reveal">
+          <span class="eyebrow">Generator link</span>
+          <h2>Buat link toko dalam 30 detik</h2>
+          <p>Ini mockup generator. Di versi live, data tersimpan ke Supabase dan link publiknya jadi seperti <b>linktoko.id/s/nama-toko</b>.</p>
+          <form class="builder-form" id="builderForm">
+            <label>
+              Nama toko
+              <input type="text" id="brandInput" value="Kopi Senja" maxlength="32" />
+            </label>
+            <label>
+              Tagline
+              <input type="text" id="taglineInput" value="Ngopi santai, checkout cepat." maxlength="60" />
+            </label>
+            <label>
+              Kategori
+              <select id="categoryInput">
+                <option>Kuliner</option>
+                <option>Fashion</option>
+                <option>Jasa</option>
+                <option>Produk Digital</option>
+              </select>
+            </label>
+            <label>
+              Warna brand
+              <input type="color" id="colorInput" value="#7057ff" />
+            </label>
+            <button class="btn btn-primary" type="submit">Generate link toko</button>
+          </form>
+          <div class="generated-link" id="generatedLink">https://linktoko.id/s/kopi-senja</div>
+        </div>
+        <div class="phone-frame reveal delay-1">
+          <div class="phone-screen" id="phoneScreen">
+            <div class="phone-top"></div>
+            <div class="store-cover">
+              <span class="phone-logo" id="phoneLogo">KS</span>
+              <h3 id="phoneBrand">Kopi Senja</h3>
+              <p id="phoneTagline">Ngopi santai, checkout cepat.</p>
+              <span class="category-badge" id="phoneCategory">Kuliner</span>
+            </div>
+            <div class="phone-products" id="phoneProducts"></div>
+            <button class="phone-cta">Order via WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="pricing">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Paket jualan</span>
+        <h2>Model harga biar platform langsung bisa cuan</h2>
+        <p>Pakai harga awal yang gampang dipahami, nanti bisa ditambah subscription dan fee transaksi.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card reveal">
+          <span>Starter</span>
+          <h3>Rp 49K</h3>
+          <p>Satu link toko siap edit untuk seller pemula.</p>
+          <ul>
+            <li>1 template</li>
+            <li>Link publik</li>
+            <li>Order via WhatsApp</li>
+          </ul>
+          <button class="btn btn-secondary buy-btn" data-plan="Starter" data-price="49000">Beli Starter</button>
+        </article>
+        <article class="price-card highlight reveal delay-1">
+          <div class="best">Paling laku</div>
+          <span>Pro</span>
+          <h3>Rp 99K</h3>
+          <p>Untuk seller yang mau katalog dan pembayaran online.</p>
+          <ul>
+            <li>3 template premium</li>
+            <li>Integrasi payment gateway</li>
+            <li>Meta SEO dan OG image</li>
+          </ul>
+          <button class="btn btn-primary buy-btn" data-plan="Pro" data-price="99000">Beli Pro</button>
+        </article>
+        <article class="price-card reveal delay-2">
+          <span>Agency</span>
+          <h3>Rp 199K</h3>
+          <p>Untuk jasa yang jual banyak link ke client.</p>
+          <ul>
+            <li>10 link toko</li>
+            <li>Dashboard reseller</li>
+            <li>Branding custom</li>
+          </ul>
+          <button class="btn btn-secondary buy-btn" data-plan="Agency" data-price="199000">Beli Agency</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section checkout-section" id="checkout">
+      <div class="container checkout-card reveal">
+        <div>
+          <span class="eyebrow">Checkout demo</span>
+          <h2>Siapkan pembayaran langsung dari landing page</h2>
+          <p>Pada prototype ini tombol bayar masih simulasi. Di live app, tombol ini memanggil backend untuk membuat invoice Midtrans atau Xendit, lalu user lanjut bayar QRIS, VA, kartu, atau e-wallet.</p>
+        </div>
+        <div class="checkout-box">
+          <label>Paket terpilih</label>
+          <input id="checkoutPlan" value="Pro - Rp 99.000" readonly />
+          <label>Nama pembeli</label>
+          <input id="buyerName" placeholder="Nama kamu" />
+          <label>WhatsApp</label>
+          <input id="buyerPhone" placeholder="08xxxxxxxxxx" />
+          <button class="btn btn-primary" id="simulatePay">Simulasi bayar</button>
+          <a class="btn btn-wa" id="waOrder" target="_blank" rel="noreferrer">Order via WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="monetize">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Monetisasi</span>
+        <h2>5 jalur duit dari platform ini</h2>
+      </div>
+      <div class="money-grid">
+        <div class="money-card reveal"><b>1. Jual template</b><p>Harga sekali beli: Starter, Pro, Agency.</p></div>
+        <div class="money-card reveal"><b>2. Langganan hosting</b><p>Biaya bulanan untuk link aktif, analytics, dan katalog.</p></div>
+        <div class="money-card reveal"><b>3. Fee transaksi</b><p>Ambil 1-3% dari order yang lewat payment gateway.</p></div>
+        <div class="money-card reveal"><b>4. Add-on jasa</b><p>Custom desain, domain, logo, copywriting, dan upload produk.</p></div>
+        <div class="money-card reveal"><b>5. Featured listing</b><p>Seller bayar agar template atau toko mereka tampil paling atas.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark">LT</span><span>LinkToko</span></a>
+        <p>Prototype platform link toko online siap edit.</p>
+      </div>
+      <a class="btn btn-small btn-ghost" href="#generator">Buat link toko</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Checkout berhasil disimulasikan.</div>
+  <script src="script.js"></script>
+</body>
+</html>

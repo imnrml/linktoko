@@ -66,3 +66,19 @@ Nanti setelah ada testimoni, bisa dinaikkan ke harga normal: Starter Rp 49.000, 
 - Analytics kunjungan dan conversion rate.
 - Add-on domain custom.
 - Komisi transaksi per order.
+
+
+## Demo toko tambahan
+
+Versi ini sudah ditambah folder `demos/` berisi contoh toko siap preview:
+
+- `demos/kuliner-express.html`
+- `demos/fashion-drop.html`
+- `demos/jasa-pro.html`
+- `demos/digital-kit.html`
+
+Upload semua file dan folder ke GitHub, lalu tombol “Lihat demo” di section Template akan membuka halaman demo tersebut.
+
+## Google Form order
+
+Lihat file `ORDER-FORM-GUIDE.md` untuk daftar field Google Form order. Setelah form jadi, link Google Form bisa ditaruh di website atau tombol WhatsApp.

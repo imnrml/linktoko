@@ -5,7 +5,8 @@ const templates = [
     price: 'Rp 39K',
     theme: '#ff8a4c',
     desc: 'Template menu makanan, tombol WhatsApp, jam buka, dan highlight promo harian.',
-    code: 'KE'
+    code: 'KE',
+    demo: 'demos/kuliner-express.html'
   },
   {
     name: 'Fashion Drop',
@@ -13,7 +14,8 @@ const templates = [
     price: 'Rp 49K',
     theme: '#ff5ea8',
     desc: 'Template katalog outfit, varian ukuran, warna, lookbook, dan CTA checkout cepat.',
-    code: 'FD'
+    code: 'FD',
+    demo: 'demos/fashion-drop.html'
   },
   {
     name: 'Jasa Pro',
@@ -21,7 +23,8 @@ const templates = [
     price: 'Rp 59K',
     theme: '#7057ff',
     desc: 'Template profil jasa, portofolio, paket layanan, testimoni, dan form booking.',
-    code: 'JP'
+    code: 'JP',
+    demo: 'demos/jasa-pro.html'
   },
   {
     name: 'Digital Kit',
@@ -29,7 +32,8 @@ const templates = [
     price: 'Rp 69K',
     theme: '#20d6b8',
     desc: 'Template untuk ebook, preset, course, desain digital, dan delivery link otomatis.',
-    code: 'DK'
+    code: 'DK',
+    demo: 'demos/digital-kit.html'
   }
 ];
 
@@ -81,7 +85,10 @@ function renderTemplates() {
         <h3>${item.name}</h3>
         <p>${item.desc}</p>
         <div class="template-meta"><span>${item.niche}</span><b>${item.price}</b></div>
-        <button class="btn btn-secondary buy-btn" data-plan="${item.name}" data-price="${Number(item.price.replace(/[^0-9]/g, '')) * 1000}">Pilih template</button>
+        <div class="template-actions">
+          <a class="btn btn-secondary" href="${item.demo}" target="_blank" rel="noreferrer">Lihat demo</a>
+          <button class="btn btn-primary buy-btn" data-plan="${item.name}" data-price="${Number(item.price.replace(/[^0-9]/g, '')) * 1000}">Pilih</button>
+        </div>
       </div>
     </article>
   `).join('');

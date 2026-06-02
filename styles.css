@@ -212,3 +212,16 @@ ul { padding-left: 18px; color: var(--muted); line-height: 1.9; }
   color: var(--primary);
   font-weight: 800;
 }
+
+
+.template-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.template-actions .btn {
+  width: 100%;
+  padding: 12px 14px;
+}

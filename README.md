@@ -39,6 +39,23 @@ Lalu buka `http://localhost:8080`.
 6. Setelah paid, sistem membuat store slug seperti `/s/kopi-senja`.
 7. Seller masuk dashboard dan edit nama toko, produk, warna, WA, dan domain.
 
+
+## Data admin versi ini
+
+- WhatsApp admin: +62 878-3881-5588
+- PayPal: paypal.me/Dyan2001
+- Pembayaran bank: SeaBank atas nama DIAN PRATAMA
+
+Catatan keamanan: untuk testing publik, sebaiknya detail nomor rekening diberikan lewat WhatsApp setelah buyer serius order.
+
+## Harga launch promo yang dipakai
+
+- Starter: Rp 39.000
+- Pro: Rp 89.000
+- Agency: Rp 179.000
+
+Nanti setelah ada testimoni, bisa dinaikkan ke harga normal: Starter Rp 49.000, Pro Rp 99.000, Agency Rp 249.000.
+
 ## Roadmap fitur
 
 - Login seller.

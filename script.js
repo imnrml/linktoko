@@ -2,7 +2,7 @@ const templates = [
   {
     name: 'Kuliner Express',
     niche: 'Kuliner',
-    price: 'Rp 49K',
+    price: 'Rp 39K',
     theme: '#ff8a4c',
     desc: 'Template menu makanan, tombol WhatsApp, jam buka, dan highlight promo harian.',
     code: 'KE'
@@ -10,7 +10,7 @@ const templates = [
   {
     name: 'Fashion Drop',
     niche: 'Fashion',
-    price: 'Rp 79K',
+    price: 'Rp 49K',
     theme: '#ff5ea8',
     desc: 'Template katalog outfit, varian ukuran, warna, lookbook, dan CTA checkout cepat.',
     code: 'FD'
@@ -18,7 +18,7 @@ const templates = [
   {
     name: 'Jasa Pro',
     niche: 'Jasa',
-    price: 'Rp 99K',
+    price: 'Rp 59K',
     theme: '#7057ff',
     desc: 'Template profil jasa, portofolio, paket layanan, testimoni, dan form booking.',
     code: 'JP'
@@ -26,7 +26,7 @@ const templates = [
   {
     name: 'Digital Kit',
     niche: 'Produk Digital',
-    price: 'Rp 129K',
+    price: 'Rp 69K',
     theme: '#20d6b8',
     desc: 'Template untuk ebook, preset, course, desain digital, dan delivery link otomatis.',
     code: 'DK'
@@ -81,7 +81,7 @@ function renderTemplates() {
         <h3>${item.name}</h3>
         <p>${item.desc}</p>
         <div class="template-meta"><span>${item.niche}</span><b>${item.price}</b></div>
-        <button class="btn btn-secondary buy-btn" data-plan="${item.name}" data-price="${item.price.replace(/[^0-9]/g, '')}806">Pilih template</button>
+        <button class="btn btn-secondary buy-btn" data-plan="${item.name}" data-price="${Number(item.price.replace(/[^0-9]/g, '')) * 1000}">Pilih template</button>
       </div>
     </article>
   `).join('');
@@ -114,7 +114,7 @@ function updatePreview() {
 }
 
 function setCheckout(plan, price) {
-  const numeric = Number(price || 99000);
+  const numeric = Number(price || 89000);
   checkoutPlan.value = `${plan} - Rp ${rupiah(numeric)}`;
   document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
   updateWaLink();
@@ -123,8 +123,8 @@ function setCheckout(plan, price) {
 function updateWaLink() {
   const name = document.getElementById('buyerName').value || 'Calon pembeli';
   const phone = document.getElementById('buyerPhone').value || '-';
-  const text = `Halo LinkToko, saya ${name}. Saya mau beli ${checkoutPlan.value}. Nomor WA: ${phone}`;
-  waOrder.href = `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`;
+  const text = `Halo LinkToko, saya ${name}. Saya mau beli ${checkoutPlan.value}. Nomor WA: ${phone}. Mohon info pembayaran via SeaBank atau PayPal.`;
+  waOrder.href = `https://wa.me/6287838815588?text=${encodeURIComponent(text)}`;
 }
 
 renderTemplates();

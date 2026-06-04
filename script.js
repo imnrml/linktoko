@@ -4,18 +4,20 @@ const templates = [
     niche: 'Kuliner',
     price: 'Rp 39K',
     theme: '#ff8a4c',
-    desc: 'Template menu makanan, tombol WhatsApp, jam buka, dan highlight promo harian.',
+    desc: 'Template menu makanan, tombol WhatsApp, jam buka, promo harian, dan foto produk.',
     code: 'KE',
-    demo: 'demos/kuliner-express.html'
+    demo: 'demos/kuliner-express.html',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80'
   },
   {
     name: 'Fashion Drop',
     niche: 'Fashion',
     price: 'Rp 49K',
     theme: '#ff5ea8',
-    desc: 'Template katalog outfit, varian ukuran, warna, lookbook, dan CTA checkout cepat.',
+    desc: 'Template katalog outfit, varian ukuran, lookbook, dan CTA checkout cepat.',
     code: 'FD',
-    demo: 'demos/fashion-drop.html'
+    demo: 'demos/fashion-drop.html',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80'
   },
   {
     name: 'Jasa Pro',
@@ -24,7 +26,8 @@ const templates = [
     theme: '#7057ff',
     desc: 'Template profil jasa, portofolio, paket layanan, testimoni, dan form booking.',
     code: 'JP',
-    demo: 'demos/jasa-pro.html'
+    demo: 'demos/jasa-pro.html',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80'
   },
   {
     name: 'Digital Kit',
@@ -33,7 +36,8 @@ const templates = [
     theme: '#20d6b8',
     desc: 'Template untuk ebook, preset, course, desain digital, dan delivery link otomatis.',
     code: 'DK',
-    demo: 'demos/digital-kit.html'
+    demo: 'demos/digital-kit.html',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80'
   }
 ];
 
@@ -80,7 +84,10 @@ function initials(value) {
 function renderTemplates() {
   templateGrid.innerHTML = templates.map((item) => `
     <article class="template-card reveal">
-      <div class="template-art" style="--theme:${item.theme}"><span>${item.code}</span></div>
+      <div class="template-art" style="--theme:${item.theme}">
+        <img src="${item.image}" alt="Preview ${item.name}" loading="lazy" />
+        <span>${item.code}</span>
+      </div>
       <div class="template-body">
         <h3>${item.name}</h3>
         <p>${item.desc}</p>
@@ -134,6 +141,12 @@ function updateWaLink() {
   waOrder.href = `https://wa.me/6287838815588?text=${encodeURIComponent(text)}`;
 }
 
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2600);
+}
+
 renderTemplates();
 renderProducts('Kuliner');
 updatePreview();
@@ -142,7 +155,7 @@ updateWaLink();
 document.getElementById('builderForm').addEventListener('submit', (event) => {
   event.preventDefault();
   updatePreview();
-  showToast('Link toko berhasil dibuat secara demo.');
+  showToast('Preview toko berhasil dibuat.');
 });
 
 ['brandInput', 'taglineInput', 'categoryInput', 'colorInput'].forEach((id) => {
@@ -157,19 +170,6 @@ document.addEventListener('click', (event) => {
   const target = event.target.closest('.buy-btn');
   if (target) setCheckout(target.dataset.plan, target.dataset.price);
 });
-
-const simulatePay = document.getElementById('simulatePay');
-if (simulatePay) {
-  simulatePay.addEventListener('click', () => {
-    showToast('Checkout demo sukses. Sambungkan API payment untuk live.');
-  });
-}
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2600);
-}
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

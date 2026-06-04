@@ -89,3 +89,9 @@ Lihat file `ORDER-FORM-GUIDE.md` untuk daftar field Google Form order. Setelah f
 Form order aktif: https://forms.gle/VqqfZQ54HhXaM4mo6
 
 Metode pembayaran manual: SeaBank, PayPal, dan DANA. Untuk keamanan, detail tujuan pembayaran sebaiknya diberikan setelah buyer mengisi form atau chat WhatsApp admin.
+
+## Update toko customer
+Versi ini sudah menambahkan:
+- `stores/dapur-test.html` sebagai contoh toko customer yang sudah jadi.
+- `templates/store-template-pro.html` sebagai template toko customer yang lebih menarik.
+- `CUSTOMER-STORE-GUIDE.md` sebagai panduan replace placeholder.

@@ -236,3 +236,17 @@ details p { margin: 12px 0 0; font-size: 14px; }
   .checkout-card { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* Custom package update */
+.price-note { margin-top: 18px; color: var(--muted); font-weight: 800; text-align: center; }
+.custom-section { background: linear-gradient(180deg, rgba(112,87,255,.12), rgba(255,255,255,.03)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.custom-layout { display: grid; gap: 26px; }
+.scope-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.scope-card, .addon-card { border: 1px solid var(--line); border-radius: 26px; padding: 22px; background: linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.055)); box-shadow: 0 16px 44px rgba(0,0,0,.14); }
+.scope-card span { font-size: 30px; display: inline-flex; margin-bottom: 12px; }
+.scope-card b, .addon-card b { display: block; font-size: 17px; letter-spacing: -.03em; margin-bottom: 8px; color: var(--text); }
+.scope-card p, .addon-card p { margin: 0; font-size: 14px; color: var(--muted); }
+.addon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.addon-card strong { display: block; margin: 12px 0 8px; font-size: 22px; letter-spacing: -.05em; color: #fff; }
+@media (max-width: 980px) { .scope-grid, .addon-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .scope-grid, .addon-grid { grid-template-columns: 1fr; } }

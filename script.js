@@ -2,9 +2,9 @@ const templates = [
   {
     name: 'Kuliner Express',
     niche: 'Kuliner',
-    price: 'Rp 39K',
-    theme: '#ff8a4c',
-    desc: 'Template menu makanan, tombol WhatsApp, jam buka, promo harian, dan foto produk.',
+    price: 'Rp39K',
+    theme: '#f97316',
+    desc: 'Untuk bisnis makanan & minuman. Menu, promo, jam buka, foto produk, dan WhatsApp order.',
     code: 'KE',
     demo: 'demos/kuliner-express.html',
     image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80'
@@ -12,9 +12,9 @@ const templates = [
   {
     name: 'Fashion Drop',
     niche: 'Fashion',
-    price: 'Rp 49K',
-    theme: '#ff5ea8',
-    desc: 'Template katalog outfit, varian ukuran, lookbook, dan CTA checkout cepat.',
+    price: 'Rp49K',
+    theme: '#ec4899',
+    desc: 'Untuk katalog outfit, ukuran, lookbook, promo, dan tombol order cepat seller fashion.',
     code: 'FD',
     demo: 'demos/fashion-drop.html',
     image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80'
@@ -22,9 +22,9 @@ const templates = [
   {
     name: 'Jasa Pro',
     niche: 'Jasa',
-    price: 'Rp 59K',
-    theme: '#7057ff',
-    desc: 'Template profil jasa, portofolio, paket layanan, testimoni, dan form booking.',
+    price: 'Rp59K',
+    theme: '#8b5cf6',
+    desc: 'Untuk profil jasa, portfolio, paket layanan, testimoni, dan tombol konsultasi.',
     code: 'JP',
     demo: 'demos/jasa-pro.html',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80'
@@ -32,59 +32,21 @@ const templates = [
   {
     name: 'Digital Kit',
     niche: 'Produk Digital',
-    price: 'Rp 69K',
-    theme: '#20d6b8',
-    desc: 'Template untuk ebook, preset, course, desain digital, dan delivery link otomatis.',
+    price: 'Rp69K',
+    theme: '#22d3ee',
+    desc: 'Untuk ebook, preset, course, template digital, dan katalog produk digital.',
     code: 'DK',
     demo: 'demos/digital-kit.html',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80'
   }
 ];
 
-const productMap = {
-  Kuliner: [
-    ['Kopi Susu Aren', 'Rp 18.000'],
-    ['Croissant Butter', 'Rp 22.000'],
-    ['Paket Nongkrong', 'Rp 39.000']
-  ],
-  Fashion: [
-    ['Oversize Tee', 'Rp 89.000'],
-    ['Cargo Pants', 'Rp 159.000'],
-    ['Bundle Outfit', 'Rp 219.000']
-  ],
-  Jasa: [
-    ['Logo Basic', 'Rp 99.000'],
-    ['Landing Page', 'Rp 299.000'],
-    ['Social Kit', 'Rp 149.000']
-  ],
-  'Produk Digital': [
-    ['Preset Lightroom', 'Rp 35.000'],
-    ['Ebook Bisnis', 'Rp 59.000'],
-    ['Template Notion', 'Rp 79.000']
-  ]
-};
-
-const templateGrid = document.getElementById('templateGrid');
-const checkoutPlan = document.getElementById('checkoutPlan');
-const waOrder = document.getElementById('waOrder');
-const toast = document.getElementById('toast');
-
-function rupiah(value) {
-  return new Intl.NumberFormat('id-ID').format(value);
-}
-
-function slugify(value) {
-  return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'toko-baru';
-}
-
-function initials(value) {
-  return value.split(' ').filter(Boolean).slice(0, 2).map(part => part[0]).join('').toUpperCase() || 'LT';
-}
-
 function renderTemplates() {
+  const templateGrid = document.getElementById('templateGrid');
+  if (!templateGrid) return;
   templateGrid.innerHTML = templates.map((item) => `
-    <article class="template-card reveal">
-      <div class="template-art" style="--theme:${item.theme}">
+    <article class="template-card reveal" style="--themeGlow:${item.theme}">
+      <div class="template-art">
         <img src="${item.image}" alt="Preview ${item.name}" loading="lazy" />
         <span>${item.code}</span>
       </div>
@@ -93,92 +55,55 @@ function renderTemplates() {
         <p>${item.desc}</p>
         <div class="template-meta"><span>${item.niche}</span><b>${item.price}</b></div>
         <div class="template-actions">
-          <a class="btn btn-secondary" href="${item.demo}" target="_blank" rel="noreferrer">Lihat demo</a>
-          <button class="btn btn-primary buy-btn" data-plan="${item.name}" data-price="${Number(item.price.replace(/[^0-9]/g, '')) * 1000}">Pilih</button>
+          <a class="btn btn-soft" href="${item.demo}" target="_blank" rel="noreferrer">Lihat demo</a>
+          <a class="btn btn-primary" href="https://forms.gle/VqqfZQ54HhXaM4mo6" target="_blank" rel="noreferrer">Pilih</a>
         </div>
       </div>
     </article>
   `).join('');
 }
 
-function renderProducts(category) {
-  const phoneProducts = document.getElementById('phoneProducts');
-  const products = productMap[category] || productMap.Kuliner;
-  phoneProducts.innerHTML = products.map(([name, price]) => `
-    <div class="phone-product">
-      <div><b>${name}</b><span>Stok tersedia</span></div>
-      <strong>${price}</strong>
-    </div>
-  `).join('');
+function setupMenu() {
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  if (!menuBtn || !navLinks) return;
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
 }
 
-function updatePreview() {
-  const brand = document.getElementById('brandInput').value;
-  const tagline = document.getElementById('taglineInput').value;
-  const category = document.getElementById('categoryInput').value;
-  const color = document.getElementById('colorInput').value;
-
-  document.documentElement.style.setProperty('--primary', color);
-  document.getElementById('phoneBrand').textContent = brand || 'Toko Baru';
-  document.getElementById('phoneTagline').textContent = tagline || 'Link toko siap jualan.';
-  document.getElementById('phoneCategory').textContent = category;
-  document.getElementById('phoneLogo').textContent = initials(brand);
-  document.getElementById('generatedLink').textContent = `https://linktoko.id/s/${slugify(brand)}`;
-  renderProducts(category);
+function setupFaq() {
+  document.querySelectorAll('.faq-item button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      item.classList.toggle('open');
+    });
+  });
 }
 
-function setCheckout(plan, price) {
-  const numeric = Number(price || 89000);
-  checkoutPlan.value = `${plan} - Rp ${rupiah(numeric)}`;
-  document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
-  updateWaLink();
+function setupReveal() {
+  const els = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.12 });
+  els.forEach((el) => observer.observe(el));
 }
 
-function updateWaLink() {
-  const name = document.getElementById('buyerName').value || 'Calon pembeli';
-  const phone = document.getElementById('buyerPhone').value || '-';
-  const text = `Halo LinkToko, saya ${name}. Saya mau beli ${checkoutPlan.value}. Nomor WA: ${phone}. Mohon info pembayaran via SeaBank, PayPal, atau DANA.`;
-  waOrder.href = `https://wa.me/6287838815588?text=${encodeURIComponent(text)}`;
-}
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2600);
+function setupPlanMessage() {
+  document.querySelectorAll('.buy-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const plan = btn.dataset.plan;
+      if (!plan) return;
+      sessionStorage.setItem('linktoko_plan', plan);
+    });
+  });
 }
 
 renderTemplates();
-renderProducts('Kuliner');
-updatePreview();
-updateWaLink();
-
-document.getElementById('builderForm').addEventListener('submit', (event) => {
-  event.preventDefault();
-  updatePreview();
-  showToast('Preview toko berhasil dibuat.');
-});
-
-['brandInput', 'taglineInput', 'categoryInput', 'colorInput'].forEach((id) => {
-  document.getElementById(id).addEventListener('input', updatePreview);
-});
-
-['buyerName', 'buyerPhone'].forEach((id) => {
-  document.getElementById(id).addEventListener('input', updateWaLink);
-});
-
-document.addEventListener('click', (event) => {
-  const target = event.target.closest('.buy-btn');
-  if (target) setCheckout(target.dataset.plan, target.dataset.price);
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add('show');
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-document.getElementById('menuBtn').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
-});
+setupMenu();
+setupFaq();
+setupReveal();
+setupPlanMessage();

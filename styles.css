@@ -253,22 +253,3 @@ h3 { letter-spacing: -.04em; }
   h1 { font-size: 42px; }
   h2 { font-size: 34px; }
 }
-
-.brand-luxury {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.brand-luxury .luxury-logo {
-  width: 150px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-@media (max-width: 768px) {
-  .brand-luxury .luxury-logo {
-    width: 125px;
-  }
-}

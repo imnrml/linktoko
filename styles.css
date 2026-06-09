@@ -253,3 +253,119 @@ h3 { letter-spacing: -.04em; }
   h1 { font-size: 42px; }
   h2 { font-size: 34px; }
 }
+
+/* Demo cards upgrade - aligned with dynamic store demos */
+.demo-showcase.upgraded {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.demo-card.cyan .demo-preview {
+  background: linear-gradient(135deg, rgba(14, 116, 144, .92), rgba(10, 15, 30, .98));
+}
+
+.demo-chip {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 22px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.16);
+  color: rgba(255,255,255,.88);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.demo-showcase.upgraded .demo-preview {
+  height: 330px;
+}
+
+.demo-showcase.upgraded .demo-preview h3 {
+  margin-top: 18px;
+  font-size: 25px;
+  max-width: 245px;
+}
+
+.demo-showcase.upgraded .demo-preview p {
+  max-width: 230px;
+  line-height: 1.5;
+}
+
+.demo-showcase.upgraded .demo-preview img {
+  width: 205px;
+  height: 205px;
+  right: -28px;
+  bottom: -24px;
+}
+
+.upgraded-foot a {
+  color: white;
+  border-color: rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+}
+
+.demo-cta {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: radial-gradient(circle at 0% 0%, rgba(124, 58, 237, .22), transparent 38%),
+              radial-gradient(circle at 100% 100%, rgba(34, 211, 238, .18), transparent 36%),
+              rgba(255,255,255,.065);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 22px 70px rgba(0,0,0,.22);
+}
+
+.demo-cta div {
+  display: grid;
+  gap: 6px;
+}
+
+.demo-cta b {
+  font-size: 20px;
+  letter-spacing: -.04em;
+}
+
+.demo-cta span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.template-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.template-tags span {
+  border: 1px solid rgba(255,255,255,.11);
+  background: rgba(255,255,255,.07);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 7px 9px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+@media (max-width: 1100px) {
+  .demo-showcase.upgraded {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .demo-showcase.upgraded {
+    grid-template-columns: 1fr;
+  }
+  .demo-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .demo-cta .btn {
+    width: 100%;
+  }
+}

@@ -2,42 +2,46 @@ const templates = [
   {
     name: 'Kuliner Express',
     niche: 'Kuliner',
-    price: 'Rp39K',
+    price: 'Mulai Rp39K',
     theme: '#f97316',
-    desc: 'Untuk bisnis makanan & minuman. Menu, promo, jam buka, foto produk, dan WhatsApp order.',
+    desc: 'Cocok untuk makanan, minuman, coffee shop, frozen food, katering, dan dessert. Bisa tampilkan menu, promo, jam buka, area delivery, dan tombol order WhatsApp.',
     code: 'KE',
     demo: 'demos/kuliner-express.html',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80'
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80',
+    tags: ['Menu rapi', 'Promo', 'Delivery', 'WA order']
   },
   {
     name: 'Fashion Drop',
     niche: 'Fashion',
-    price: 'Rp49K',
+    price: 'Mulai Rp39K',
     theme: '#ec4899',
-    desc: 'Untuk katalog outfit, ukuran, lookbook, promo, dan tombol order cepat seller fashion.',
+    desc: 'Cocok untuk seller baju, hijab, aksesoris, outfit harian, dan katalog fashion. Bisa tampilkan foto produk, harga, ukuran, Instagram, TikTok, dan Shopee.',
     code: 'FD',
     demo: 'demos/fashion-drop.html',
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80'
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80',
+    tags: ['Lookbook', 'Ukuran', 'Shopee', 'Sosmed']
   },
   {
     name: 'Jasa Pro',
     niche: 'Jasa',
-    price: 'Rp59K',
+    price: 'Mulai Rp39K',
     theme: '#8b5cf6',
-    desc: 'Untuk profil jasa, portfolio, paket layanan, testimoni, dan tombol konsultasi.',
+    desc: 'Cocok untuk freelancer, desain, laundry, barbershop, fotografi, konsultasi, dan jasa online. Bisa tampilkan paket layanan, portfolio, testimoni, dan tombol konsultasi.',
     code: 'JP',
     demo: 'demos/jasa-pro.html',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80'
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80',
+    tags: ['Portfolio', 'Paket jasa', 'Testimoni', 'Konsultasi']
   },
   {
     name: 'Digital Kit',
     niche: 'Produk Digital',
-    price: 'Rp69K',
+    price: 'Mulai Rp39K',
     theme: '#22d3ee',
-    desc: 'Untuk ebook, preset, course, template digital, dan katalog produk digital.',
+    desc: 'Cocok untuk ebook, preset, Canva template, mini course, file desain, dan bundle digital. Bisa tampilkan benefit produk, bonus, harga, dan link delivery.',
     code: 'DK',
     demo: 'demos/digital-kit.html',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80'
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80',
+    tags: ['Ebook', 'Preset', 'Template', 'Course']
   }
 ];
 
@@ -53,10 +57,11 @@ function renderTemplates() {
       <div class="template-body">
         <h3>${item.name}</h3>
         <p>${item.desc}</p>
+        <div class="template-tags">${item.tags.map((tag) => `<span>${tag}</span>`).join('')}</div>
         <div class="template-meta"><span>${item.niche}</span><b>${item.price}</b></div>
         <div class="template-actions">
           <a class="btn btn-soft" href="${item.demo}" target="_blank" rel="noreferrer">Lihat demo</a>
-          <a class="btn btn-primary" href="https://forms.gle/VqqfZQ54HhXaM4mo6" target="_blank" rel="noreferrer">Pilih</a>
+          <a class="btn btn-primary" href="https://forms.gle/VqqfZQ54HhXaM4mo6" target="_blank" rel="noreferrer">Pilih template</a>
         </div>
       </div>
     </article>
